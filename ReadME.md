@@ -1,3 +1,4 @@
 # NTUT 機器學習 Kaggle房價預測
-
-![img](https://github.com/Yousheng-Liang/ntut_house_price_predction/blob/lys/imgs/plot1.png)
+---
+## Step1. 讀取資料
+首先使用pandas的read_csv方法
