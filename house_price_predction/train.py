@@ -1,4 +1,4 @@
-import csv
+from tensorflow.keras.models import save_model
 import pandas as pd
 from tensorflow.keras.optimizers import Adam
 from sklearn.preprocessing import StandardScaler, scale
@@ -64,15 +64,6 @@ plot.plot(history)
 plot.legend(["loss", "val_loss"])
 plot.show()
 
-# Predict the Result and Save
-y_test = myModel.predict(x_test)
-
-with open("result.csv", "w", newline="") as result :
-    writer = csv.writer(result)
-    writer.writerow(["id", "price"])
-
-    for i in range(y_test.shape[0]):
-        writer.writerow([(i+1), y_test[i][0]])
-
-
+# Save the Model
+save_model(myModel, "myModel.h5")
 
