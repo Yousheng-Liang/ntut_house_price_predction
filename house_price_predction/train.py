@@ -1,9 +1,9 @@
-from tensorflow.keras.models import save_model
 import pandas as pd
 from tensorflow.keras.optimizers import Adam
 from sklearn.preprocessing import StandardScaler, scale
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
+from tensorflow.keras.models import save_model
 from matplotlib import pyplot as plot
 from sklearn.utils import shuffle
 
