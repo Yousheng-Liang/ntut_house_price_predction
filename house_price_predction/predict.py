@@ -2,9 +2,6 @@ import csv
 import pandas as pd
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import StandardScaler, scale
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
-from matplotlib import pyplot as plot
 from sklearn.utils import shuffle
 
 # Load Dataset

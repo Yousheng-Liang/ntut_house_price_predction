@@ -1,6 +1,5 @@
 # NTUT 機器學習 Kaggle房價預測
 ---
-# * train.py
 ## Step 0. Import需要用到的套件
 ##### 本專案用到的套件如下
 |套件名稱|套件用途|
@@ -129,3 +128,46 @@ plot.show()
 # Save the Model
 save_model(myModel, "myModel.h5")
 ```
+## Step 6. 載入模型
+使用`keras`的`load_model`方法可以將剛才儲存的模型讀入變數中
+##### 此部分程式碼如下
+```python
+# Load Model
+myModel = load_model("myModel.h5")
+```
+## Step 7. 預測結果並輸出為csv檔
+預測結果的部分使用`model.predict`方法即可<br/>
+而輸出至csv檔的方法，我使用迴圈寫入id及對應之price
+##### 此部分程式碼如下
+```python
+# Predict the Result and Save
+y_test = myModel.predict(x_test)
+
+with open("result.csv", "w", newline="") as result :
+    writer = csv.writer(result)
+    writer.writerow(["id", "price"])
+
+    for i in range(y_test.shape[0]):
+        writer.writerow([(i+1), y_test[i][0]])
+```
+## 最終結果
+##### 本專案最終訓練結果如下圖
+###### loss、val_loss曲線圖
+<div align="center">
+<img src="imgs/plot.png" width="70%"/>
+</div>
+###### loss、val_loss之最終值
+<div align="center">
+<img src="imgs/result.png" width="70%"/>
+</div>
+###### Kaggle成績-第四名
+<div align="center">
+<img src="imgs/kaggle.png" width="70%"/>
+</div>
+---
+## 心得
+我第一次參加這樣子的競賽，很好玩<br/>
+但也因為經驗不足導致很多地方做得不夠好<br/>
+像是資料的前處理，我就沒有下太多的功夫<br/>
+還有模型參數的調整，也是因為經驗不足才調很久<br/>
+這次的比賽讓我獲得不少經驗，希望下次再比的時候能夠活用所得，拿取更好的成績！
