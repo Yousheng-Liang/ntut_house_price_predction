@@ -61,4 +61,12 @@ x_test = test_file.drop(["id"], axis=1).values  # 丟棄id欄位
 因此我並沒有用到太多技巧，純粹只是對輸入資料做標準化
 ##### 資料標準化
 1. 使用`sklearn.preprocessing`的`StandardScaler`功能<br/>
-將
+將`x_train`取標準化，並取得標準化的參數
+2. 利用標準化的參數將`x_valid`和`x_test`也做標準化
+``` python
+# Scale Data
+scaler = StandardScaler().fit(x_train)
+x_train = scale(x_train)
+x_valid = scaler.transform(x_valid)
+x_test = scaler.transform(x_test)
+```
