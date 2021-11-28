@@ -76,7 +76,8 @@ x_test = scaler.transform(x_test)
 後來我試著將神經元個數減少，發現overfitting問題解決，但收斂很慢<br/>
 因此我將epoches調高，讓模型有更多時間去收斂，但發現收斂上限依然不足<br/>
 於是最後我將神經元數量再次拉高，並且在較大層數的hidden layer間放入dropout<br/>
-最終結果比原先好了很多，我覺得應該能夠再調得更好，但礙於上傳次數限制無法每次都看到結果，增加了參數調整的難度。
+最終結果雖然比原先好了很多，解決了overfitting問題，loss也降到63000左右，但我覺得應該能夠再調得更好<br/>
+但由於上傳次數限制無法每次調整都看到結果，增加了參數調整的難度
 ```python
 # Create Model
 myModel = Sequential()
