@@ -9,6 +9,9 @@
 |sklearn|用來處理資料，本專案中用以資料前處理|
 |matplotlib|用來繪製圖形，能更清楚顯示模型訓練的成果|
 
-<img src='imgs/import.png' width=50%>
+<img src='imgs/import.png' width=70%>
+'import pandas as pd'
+'this is a test string'
+
 ## Step1. 讀取資料
 首先使用pandas的read_csv方法
