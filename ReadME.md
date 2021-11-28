@@ -62,6 +62,7 @@ x_test = test_file.drop(["id"], axis=1).values  # 丟棄id欄位
 ##### 資料標準化
 1. 使用`sklearn.preprocessing`的`StandardScaler`功能將`x_train`取標準化，並取得標準化的參數
 2. 利用標準化的參數將`x_valid`和`x_test`也做標準化
+##### 此部分程式碼如下
 ``` python
 # Scale Data
 scaler = StandardScaler().fit(x_train)
@@ -70,7 +71,12 @@ x_valid = scaler.transform(x_valid)
 x_test = scaler.transform(x_test)
 ```
 ## Step 3. 建立模型
-這個步驟花費我最長時間，不停的尋找最佳組合
+這個步驟花費我最長時間，不停的尋找最佳組合<br/>
+一開始我設定的神經元數量很大，訓練出來的結果一直都是overfitting<br/>
+後來我試著將神經元個數減少，發現overfitting問題解決，但收斂很慢<br/>
+因此我將epoches調高，讓模型有更多時間去收斂，但發現收斂上限依然不足<br/>
+於是最後我將神經元數量再次拉高，並且在較大層數的hidden layer間放入dropout<br/>
+最終結果比原先好了很多，我覺得應該能夠再調得更好，但礙於上傳次數限制無法每次都看到結果，增加了參數調整的難度。
 ```python
 # Create Model
 myModel = Sequential()
