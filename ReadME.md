@@ -78,19 +78,30 @@ x_test = scaler.transform(x_test)
 於是最後我將神經元數量再次拉高，並且在較大層數的hidden layer間放入dropout<br/>
 最終結果雖然好了很多，沒有overfitting，loss也降了不少，但我覺得應該能夠再調得更好<br/>
 但由於上傳次數限制無法每次調整都看到結果，增加了參數調整的難度
+
+##### 此部分程式碼如下
 ```python
 # Create Model
-myModel = Sequential()
+myModel = Sequential()  # Sequential會自動將各層連接起來
+# 加入神經元個數為500的Dense層，並設定輸入的shape。由於Sequential會自動連接，故後面的都不需設定shape
 myModel.add(Dense(500, input_dim=x_train.shape[1], activation="relu", kernel_initializer="normal"))
+# 加入25%的Dropout
 myModel.add(Dropout(0.25))
-myModel.add(Dense(400, input_dim=x_train.shape[1], activation="relu", kernel_initializer="normal"))
+# 加入神經元個數為400的Dense層
+myModel.add(Dense(400, activation="relu", kernel_initializer="normal"))
+# 加入20%的Dropout
 myModel.add(Dropout(0.2))
+# 加入神經元個數為150的Dense層
 myModel.add(Dense(150, activation="relu", kernel_initializer="normal"))
+# 加入20%的Dropout
 myModel.add(Dropout(0.2))
+# 加入神經元個數為50的Dense層
 myModel.add(Dense(50, activation="relu", kernel_initializer="normal"))
+# 加入神經元個數為20的Dense層
 myModel.add(Dense(20, activation="relu", kernel_initializer="normal"))
+# 建立output layer
 myModel.add(Dense(1, activation='linear'))
-
+# 設定Adam的learning_rate為0.0004
 opt = Adam(learning_rate=0.0004)
 myModel.compile(optimizer=opt, loss="MAE")
 ```
