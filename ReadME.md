@@ -105,3 +105,26 @@ myModel.add(Dense(1, activation='linear'))
 opt = Adam(learning_rate=0.0004)
 myModel.compile(optimizer=opt, loss="MAE")
 ```
+## Step 4. 訓練模型
+使用`keras`的好處就是訓練模型很簡單，只需要下`model.fit`指令即可<br/>
+##### 此部分程式碼如下
+```python
+# Setting Hyper parameters
+epoches = 3000
+batch_size = 2048
+
+# Start Training Model
+myModel.fit(x_train, y_train,batch_size=batch_size, epochs=epoches, validation_data=(x_valid, y_valid))
+history = pd.DataFrame(myModel.history.history)  # 將訓練結果存入變數
+plot.plot(history)  # 繪出訓練結果(loss和val_loss)
+plot.legend(["loss", "val_loss"])
+plot.show()
+```
+
+## Step 5. 儲存模型
+這步驟也是很簡單，使用`keras`的`save_model`方法即可
+##### 此部分程式碼如下
+```python
+# Save the Model
+save_model(myModel, "myModel.h5")
+```
