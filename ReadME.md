@@ -153,7 +153,10 @@ with open("result.csv", "w", newline="") as result :
 ## 最終結果
 ##### 本專案最終訓練結果如下圖
 ###### loss、val_loss曲線圖
-![img](imgs/plot.png)
+<div align="center">
+<img src="imgs/plot.png" width="70%"/>
+</div>
+
 ###### loss、val_loss之最終值
 
 <div align="center">
@@ -164,6 +167,7 @@ with open("result.csv", "w", newline="") as result :
 <div align="center">
 <img src="imgs/kaggle.png" width="70%">
 </div>
+
 ---
 ## 心得
 我第一次參加這樣子的競賽，很好玩<br/>
