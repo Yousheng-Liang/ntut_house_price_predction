@@ -11,7 +11,10 @@
 <div align='center'>
 <img src='imgs/import.png' width=70%>
 </div>
-```import pandas as pd```
+
+```python
+import pandas as pd
+```
 
 ## Step1. 讀取資料
 首先使用pandas的read_csv方法
