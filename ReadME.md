@@ -44,7 +44,16 @@ valid_path = "dataset/ntut-ml-regression-2021/valid-v3.csv"   # Valid Dataset的
 valid_file = pd.read_csv(valid_path)  # 將csv檔內容讀入變數
 
 test_path = "dataset/ntut-ml-regression-2021/test-v3.csv"      # Test Dataset的path
-test_file = pd.read_csv(test_path)     # 將csv檔內容讀入變數
+test_file = pd.read_csv(test_path)    # 將csv檔內容讀入變數
+
+# Split Dataset into input part and target part
+x_train = train_file.drop(["id", "price"], axis=1).values  # 丟棄id及price欄位
+y_train = train_file.price.values  # 將price欄位的值存入變數做為traget
+
+x_valid = valid_file.drop(["id", "price"], axis=1).values  # 丟棄id及price欄位
+y_valid = valid_file.price.values  # 將price欄位的值存入變數做為traget
+
+x_test = test_file.drop(["id"], axis=1).values  # 丟棄id欄位
 ```
 
 ## Step 2. 資料前處理
