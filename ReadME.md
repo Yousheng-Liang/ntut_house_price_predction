@@ -23,8 +23,8 @@ from sklearn.utils import shuffle  # 用以將讀入的csv內容打亂
 ```
 
 ## Step1. 讀取資料
-* train data & valid data
-首先使用pandas的read_csv方法將csv檔讀入變數
+* train data & valid data <br/>
+首先使用pandas的read_csv方法將csv檔讀入變數 <br/>
 再使用sklearn.utils的shuffle方法將輸入打亂
 之後使用pandas的drop將不需用到的欄位丟棄掉成為input
 將price欄位另存入變數作為target
