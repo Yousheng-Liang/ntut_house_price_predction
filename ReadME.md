@@ -13,6 +13,7 @@
 </div>
 
 ```python
+# import Essentials
 import pandas as pd
 ```
 
