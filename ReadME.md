@@ -9,7 +9,7 @@
 |sklearn|用來處理資料，本專案中用以資料前處理|
 |matplotlib|用來繪製圖形，能更清楚顯示模型訓練的成果|
 
-### 此部分程式碼如下
+###### 此部分程式碼如下
 ```python
 # import Essentials
 import pandas as pd  # 用來處理資料，本專案用於處理csv的讀取及篩選
@@ -25,10 +25,10 @@ from sklearn.utils import shuffle  # 用以將讀入的csv內容打亂
 ## Step1. 讀取資料
 * train data & valid data <br/>
 首先使用pandas的read_csv方法將csv檔讀入變數 <br/>
-再使用sklearn.utils的shuffle方法將輸入打亂
-之後使用pandas的drop將不需用到的欄位丟棄掉成為input
-將price欄位另存入變數作為target
+再使用sklearn.utils的shuffle方法將輸入打亂 <br/>
+之後使用pandas的drop將不需用到的欄位丟棄掉成為input <br/>
+將price欄位另存入變數作為target <br/>
 
-* test data
-首先使用pandas的read_csv方法將csv檔讀入變數
-之後使用pandas的drop將id欄位丟棄成為input
+* test data <br/>
+首先使用pandas的read_csv方法將csv檔讀入變數 <br/>
+之後使用pandas的drop將id欄位丟棄成為input <br/>
